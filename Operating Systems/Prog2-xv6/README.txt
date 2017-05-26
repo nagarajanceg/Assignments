@@ -1,0 +1,2 @@
+
+I have implemented date system call, linear search, and hashing. In hashing the collision is handled by chaining method. The hash table uses a hash function to compute the index for a system call. The structure required for hashing and linear search system calls available in cs550_syscall.h and used in cs550_syscall.c.
