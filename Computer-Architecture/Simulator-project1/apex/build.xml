@@ -1,0 +1,29 @@
+<project>
+    <presetdef name="javac">
+        <javac includeantruntime="false" />
+      </presetdef>
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/simulate.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="apex.ApexSimulator"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build/jar/simulate.jar" fork="true"/>
+        <arg value = "${arg 0}"/>
+        <arg value = "${arg 1}"/>
+    </target>
+
+</project>
